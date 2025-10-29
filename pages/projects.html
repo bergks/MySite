@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Проекты</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <header class="header">
+            <img class="header__icon" src="../images/icons/starMain.png">
+            <h1 class="header__title">Берг Ксения Вячеславовна</h1>
+        </header>
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--active" href="projects.html">Проекты</a></li>
+                <li class="nav__item"><a class="nav__link" href="diary.html">Дневник</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="projects-full">
+                <div class="projects-full__title-container">
+                    <img class="projects-full__title-icon" src="../images/icons/bow.png">
+                    <p class="projects-full__title">Мои проекты</p>
+                    <img class="projects-full__title-icon" src="../images/icons/bow.png">
+                </div>
+
+                <div class="projects-full__filters">
+                    <button class="projects-full__filter projects-full__filter--active" data-filter="all">Все</button>
+                    <button class="projects-full__filter" data-filter="html">HTML/CSS</button>
+                    <button class="projects-full__filter" data-filter="js">JavaScript</button>
+                    <button class="projects-full__filter" data-filter="react">React</button>
+                </div>
+
+                <div class="projects-full__grid">
+                    <div class="projects-full__card" data-category="html">
+                        <img src="../images/project1.png" class="projects-full__card-img">
+                        <div class="projects-full__card-content">
+                            <h3 class="projects-full__card-title">Личный сайт</h3>
+                            <p class="projects-full__card-tech">HTML, CSS</p>
+                            <p class="projects-full__card-desc">Персональный сайт-портфолио с адаптивным дизайном</p>
+                            <button class="projects-full__card-btn" data-project="1">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="projects-full__card" data-category="js">
+                        <img src="../images/project2.png" class="projects-full__card-img">
+                        <div class="projects-full__card-content">
+                            <h3 class="projects-full__card-title">Todo-приложение</h3>
+                            <p class="projects-full__card-tech">JavaScript</p>
+                            <p class="projects-full__card-desc">Приложение для управления задачами с локальным хранилищем</p>
+                            <button class="projects-full__card-btn" data-project="2">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="projects-full__card" data-category="react">
+                        <img src="../images/project3.png" class="projects-full__card-img">
+                        <div class="projects-full__card-content">
+                            <h3 class="projects-full__card-title">Интернет-магазин</h3>
+                            <p class="projects-full__card-tech">React</p>
+                            <p class="projects-full__card-desc">Полнофункциональный интернет-магазин с корзиной покупок</p>
+                            <button class="projects-full__card-btn" data-project="3">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="projects-full__card" data-category="html">
+                        <img src="../images/project4.png" class="projects-full__card-img">
+                        <div class="projects-full__card-content">
+                            <h3 class="projects-full__card-title">Портфолио</h3>
+                            <p class="projects-full__card-tech">Bootstrap</p>
+                            <p class="projects-full__card-desc">Адаптивное портфолио на Bootstrap с анимациями</p>
+                            <button class="projects-full__card-btn" data-project="4">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">&copy; 2025</p>
+            <address class="footer__contacts">
+                <img src="../images/icons/phone.png" alt="Иконка контактов" class="footer__contacts-icon">
+                <span class="footer__contacts-text">Контакты</span>
+            </address>
+        </footer>
+    </div>
+
+    <div class="modal" id="projectModal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <div class="modal__body">
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/project_cards.js"></script>
+</body>
+</html>
