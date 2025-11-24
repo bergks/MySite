@@ -170,7 +170,7 @@ body {
 }
 .skills__title-icon, .projects__title-icon,
 .study__title-icon, .cources__title-icon{
-    width: fit-content;
+    width: auto;
     height: var(--icons-text-size);
 }
 
@@ -298,7 +298,7 @@ body {
 }
 
 .footer__contacts-icon{
-    width: fit-content;
+    width: auto;
     height: var(--icons-text-size);
 }
 
@@ -411,7 +411,7 @@ body {
 }
 
 .projects-full__title-icon {
-    width: fit-content;
+    width: auto;
     height: var(--icons-text-size);
 }
 
