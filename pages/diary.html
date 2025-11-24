@@ -10,18 +10,16 @@
     <body>
     <div class="page-container">
         <header class="header">
-            <img class="header__icon" src="../images/icons/starMain.png">
-            <h1 class="header__title">Берг Ксения Вячеславовна</h1>
+            <h1 class="header__title">BERGKS</h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                    <li class="nav__item"><a class="nav__link" href="projects.html">Проекты</a></li>
+                    <li class="nav__item"><a class="nav__link nav__link--active" href="diary.html">Дневник</a></li>
+                    <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
         </header>
-
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
-                <li class="nav__item"><a class="nav__link" href="projects.html">Проекты</a></li>
-                <li class="nav__item"><a class="nav__link nav__link--active" href="diary.html">Дневник</a></li>
-                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
 
         <main class="content">
             <section class="study">
@@ -63,7 +61,7 @@
             <section class="cources">
                 <div class="cources__title-container">
                     <img class="cources__title-icon" src="../images/icons/bow.png">
-                    <p class="cources__title">Мой курсы</p>
+                    <p class="cources__title">Мои курсы</p>
                     <img class="cources__title-icon" src="../images/icons/bow.png">
                 </div>
 
@@ -204,7 +202,7 @@
         }
 
         .modal__close:hover {
-            color: #e00080;
+            color: var(--color-main);
         }
 
         .modal__body {
@@ -256,7 +254,7 @@
             outline: none;
             border-color: var(--color-accent);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 0, 144, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 179, 255, 0.3);
         }
 
         .modal__textarea {
@@ -297,7 +295,7 @@
         }
 
         .modal__button--submit:hover {
-            background: #e00080;
+            background: var(--color-main);
             transform: translateY(-2px);
         }
 
@@ -316,9 +314,9 @@
         }
 
         .study__button:hover {
-            background: #e00080;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 0, 144, 0.3);
+            background: var(--color-accent);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 179, 255, 0.3);
         }
 
         /* Адаптивность */
