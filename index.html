@@ -3,15 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Главная</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
     <div class="page-container">
         <header class="header">
             <h1 class="header__title">BERGKS</h1>
+
+            <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+            </button>
+
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
@@ -21,13 +30,27 @@
                 </ul>
             </nav>
         </header>
-        <main class="content">
+        <main class="content" id="main">
             <section class="group__profile_skills">
                 <section class="profile">
-                    <img src="images/profilePhoto.jpg" class="profile__photo-img">
+                    <picture class="profile__photo">
+                        <source
+                        typy="image/webp"
+                        srcset="
+                        images/profilePhoto-600.webp
+                        ">
+
+                        <img class="profile__photo-img"
+                        src="images/profilePhoto-300.jpg"
+                        alt="Фотография автора сайта"
+                        loading="eager"
+                        decoding="async"
+                        >
+                    </picture>
                     <div class="profile__info">
-                        <p class="profile__text-title"> Добро пожаловать!</p>
-                        <p class="profile__text">Я студентка группы ЭФБО-02-24<br>Увлекаюсь веб-разработкой</p>
+                        <p class="profile__text-title" tabindex="0" role="heading"> Добро пожаловать!</p>
+                        <p class="profile__text" tabindex="0" role="article">Я студентка группы ЭФБО-02-24<br>Увлекаюсь
+                            веб-разработкой</p>
                         <div class="profile__resume">
                             <img class="profile__resume-icon" src="images/icons/save.png">
                             <a class="profile__resume-link" href="assets/Резюме_БергКВ.docx">Скачать резюме</a>
@@ -36,67 +59,70 @@
                 </section>
 
                 <section class="skills">
+
                     <div class="skills__title-container">
                         <img class="skills__title-icon" src="images/icons/bow.png">
-                        <p class="skills__title">Мои навыки</p>
+                        <p class="skills__title" tabindex="0" role="heading">Мои навыки</p>
                         <img class="skills__title-icon" src="images/icons/bow.png">
                     </div>
 
                     <div class="skills__container">
-                        <div class="skills__bar">
-                            <p class="skills__name">HTML/CSS</p>
+                        <div class="skills__bar" tabindex="0" role="progressbar">
+                            <p class="skills__name" tabindex="0">HTML/CSS</p>
                             <div class="skills__progress">
                                 <div class="skills__progress-bar" style="width: 75%;"></div>
                             </div>
-                            <p class="skills__percent">75%</p>
+                            <p class="skills__percent" tabindex="0" aria-label="Прогресс освоения навыка 75%">75%</p>
                         </div>
 
-                        <div class="skills__bar">
-                            <p class="skills__name">JavaScript</p>
+                        <div class="skills__bar" tabindex="0" role="progressbar">
+                            <p class="skills__name" tabindex="0">JavaScript</p>
                             <div class="skills__progress">
                                 <div class="skills__progress-bar" style="width: 60%;"></div>
                             </div>
-                            <p class="skills__percent">60%</p>
+                            <p class="skills__percent" tabindex="0" aria-label="Прогресс освоения навыка 60%">60%</p>
                         </div>
 
-                        <div class="skills__bar">
-                            <p class="skills__name">Bootstrap</p>
+                        <div class="skills__bar" tabindex="0" role="progressbar">
+                            <p class="skills__name" tabindex="0">Bootstrap</p>
                             <div class="skills__progress">
                                 <div class="skills__progress-bar" style="width: 80%;"></div>
                             </div>
-                            <p class="skills__percent">80%</p>
+                            <p class="skills__percent" tabindex="0" aria-label="Прогресс освоения навыка 80%">80%</p>
                         </div>
 
-                        <div class="skills__bar">
-                            <p class="skills__name">React</p>
+                        <div class="skills__bar" tabindex="0" role="progressbar">
+                            <p class="skills__name" tabindex="0">React</p>
                             <div class="skills__progress">
                                 <div class="skills__progress-bar" style="width: 50%;"></div>
                             </div>
-                            <p class="skills__percent">50%</p>
+                            <p class="skills__percent" tabindex="0" aria-label="Прогресс освоения навыка 50%">50%</p>
                         </div>
                     </div>
                 </section>
             </section>
 
-            <section class="projects">
+            <section class="projects" id="projects">
                 <div class="projects__title-container">
                     <img class="projects__title-icon" src="images/icons/bow.png">
-                    <p class="projects__title">Лучшие проекты</p>
+                    <p class="projects__title" tabindex="0" role="heading">Лучшие проекты</p>
                     <img class="projects__title-icon" src="images/icons/bow.png">
                 </div>
 
                 <div class="projects__container">
-                    <div class="project__card">
+                    <div class="project__card" tabindex="0" role="button" aria-label="Посмотреть проект 'Личный сайт'">
                         <img src="images/project1.png" class="project__card-img">
                         <p class="project__card-title">Личный сайт</p>
                     </div>
 
-                    <div class="project__card">
+                    <div class="project__card" tabindex="0" role="button"
+                        aria-label="Посмотреть проект 'Todo-приложение'">
                         <img src="images/project2.png" class="project__card-img">
                         <p class="project__card-title">Todo приложение</p>
                     </div>
 
-                    <div class="project__card">
+                    <div class="project__card" tabindex="0" role="button"
+                        aria-label="Посмотреть проект 'Интернет магазин'">
                         <img src="images/project3.png" class="project__card-img">
                         <p class="project__card-title">Интернет магазин</p>
                     </div>
@@ -109,10 +135,11 @@
 
             <address class="footer__contacts">
                 <img src="images/icons/phone.png" alt="Иконка контактов" class="footer__contacts-icon">
-                <span class="footer__contacts-text">Контакты</span>
+                <a class="footer__contacts-text" href="pages/contacts.html" tabindex="0" role="link">Контакты</a>
             </address>
         </footer>
     </div>
+    <script src="scripts/menu.js"></script>
 </body>
 
 </html>

@@ -2,15 +2,24 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Проекты</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
     <div class="page-container">
         <header class="header">
             <h1 class="header__title">BERGKS</h1>
+
+            <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+            </button>
+
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
@@ -21,11 +30,11 @@
             </nav>
         </header>
 
-        <main class="content">
+        <main id="main" class="content">
             <section class="projects-full">
                 <div class="projects-full__title-container">
                     <img class="projects-full__title-icon" src="../images/icons/bow.png">
-                    <p class="projects-full__title">Мои проекты</p>
+                    <p class="projects-full__title" tabindex="0" role="heading">Мои проекты</p>
                     <img class="projects-full__title-icon" src="../images/icons/bow.png">
                 </div>
 
@@ -84,7 +93,7 @@
             <p class="footer__text">&copy; 2025</p>
             <address class="footer__contacts">
                 <img src="../images/icons/phone.png" alt="Иконка контактов" class="footer__contacts-icon">
-                <span class="footer__contacts-text">Контакты</span>
+                <a class="footer__contacts-text" href="pages/contacts.html" tabindex="0" role="link">Контакты</a>
             </address>
         </footer>
     </div>

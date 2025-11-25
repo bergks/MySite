@@ -5,6 +5,7 @@
     --color-text-light: #eff8fef0;
     --color-border: rgba(219, 248, 252, 0.623);
     --color-background: #eff8fe;
+    --color-focus: #a069ff;
 
     --radius: 20px;
 
@@ -35,6 +36,36 @@
     font-display: swap;
 }
 
+
+.skip-link {
+    position: absolute;
+    inset-inline-start: 1rem;
+    inset-block-start: -100%;
+    z-index: 10000;
+    padding: .5rem .75rem;
+    background: var(--color-background);
+    color: var(--color-text);
+    border-radius: .5rem;
+    text-decoration: none;
+    font-family: 'Elements', sans-serif;
+    font-size: var(--text-size);
+    transition: inset-block-start 0.3s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    inset-block-start: 1rem;
+}
+
+:focus-visible { 
+    outline: 3px solid var(--color-focus); 
+    outline-offset: 2px;
+}
+
+a, button, input, textarea { 
+    outline-offset: 2px; 
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -44,10 +75,17 @@ body {
 }
 
 .header {
+    position: sticky;
+    top: 0;
+    padding: 15px 30px;
+    padding-top: max(15px, calc(15px + env(safe-area-inset-top, 0px)));
+    padding-left: max(30px, calc(30px + env(safe-area-inset-left, 0px)));
+    padding-right: max(30px, calc(30px + env(safe-area-inset-right, 0px)));
+    isolation: isolate;
+    z-index: 1000;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 15px 30px;
     background: var(--color-main);
 }
 
@@ -88,6 +126,57 @@ body {
     border: 3px solid var(--color-border);
 }
 
+/* 🔥 СТИЛИ ДЛЯ БУРГЕР-МЕНЮ */
+
+/* Кнопка бургера */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.nav-toggle__line {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--color-text-light);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Анимация бургера при открытии */
+.nav-toggle--active .nav-toggle__line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.nav-toggle--active .nav-toggle__line:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle--active .nav-toggle__line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+@media (max-width: 480px) {
+    .header {
+        padding: 12px 20px;
+        padding-top: max(12px, calc(12px + env(safe-area-inset-top, 0px)));
+    }
+    
+    .nav__link {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
 .content {
     padding: 80px 100px;
     display: flex;
@@ -110,9 +199,8 @@ body {
 }
 
 .profile__photo-img {
-    width: 80%;
+    height: 400px;
     max-width: 300px;
-    height: auto;
     object-fit: cover;
     border: 3px solid var(--color-accent);
     border-radius: var(--radius);
@@ -325,6 +413,7 @@ body {
     font-family: 'Elements';
     font-size: var(--text-size);
     align-self: center;
+    color: var(--color-text-light);
     text-decoration: underline;
 }
 
@@ -425,11 +514,18 @@ body {
 @media (max-width: 900px) {
     .header {
         flex-direction: column;
+        align-items: center;
     }
 
     .nav__list {
         flex-direction: column;
         padding: 0;
+
+    }
+
+    .nav{
+        width: 100%;
+
     }
 
     .header__title {
@@ -460,6 +556,49 @@ body {
 
     .cources__container{
         margin: 30px auto;
+    }
+
+    .nav-toggle {
+        display: flex;
+        justify-self: center;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--color-main);
+        padding: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav--open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav__item{
+        text-align: center;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 40px;
+        margin: 20px;
+    }
+
+    .nav__link {
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
     }
 }
 
@@ -959,5 +1098,22 @@ body {
 
     .contacts__title {
         text-align: center;
+    }
+}
+
+@media (pointer: coarse) {
+    .nav__link,
+    .projects-full__card-btn,
+    .projects-full__filter,
+    .study__button,
+    .modal__button,
+    .contacts__submit-btn {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+    
+    .study__diary-record {
+        min-height: 44px;
+        padding: 16px 20px;
     }
 }

@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Дневник</title>
-        <link rel="stylesheet" href="../styles/style.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Дневник</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
     <div class="page-container">
         <header class="header">
             <h1 class="header__title">BERGKS</h1>
+
+            <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+            </button>
+
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
@@ -21,34 +31,34 @@
             </nav>
         </header>
 
-        <main class="content">
+        <main class="content" id="main">
             <section class="study">
                 <div class="study__title-container">
                     <img class="study__title-icon" src="../images/icons/bow.png">
-                    <p class="study__title">Мой учебный прогресс</p>
+                    <p class="study__title" role="heading" tabindex="0">Мой учебный прогресс</p>
                     <img class="study__title-icon" src="../images/icons/bow.png">
                 </div>
 
                 <div class="study__diary">
-                    <div class="study__diary-record">
+                    <div class="study__diary-record" tabindex="0" role="article" area-label="Запись в дневнике от 15.02.25">
                         <p class="study__diary-data">15.02.25</p>
                         <p class="study__diary-task">Вёрстка макета сайта</p>
                         <p class="study__diary-status">✅done</p>
                     </div>
 
-                    <div class="study__diary-record">
+                    <div class="study__diary-record " tabindex="0" role="article" area-label="Запись в дневнике от 17.02.25">
                         <p class="study__diary-data">17.02.25</p>
                         <p class="study__diary-task">Основы JavaScript</p>
                         <p class="study__diary-status">✅done</p>
                     </div>
 
-                    <div class="study__diary-record">
+                    <div class="study__diary-record" tabindex="0" role="article" area-label="Запись в дневнике от 25.02.25">
                         <p class="study__diary-data">25.02.25</p>
                         <p class="study__diary-task">Работа с формами</p>
                         <p class="study__diary-status">⏳in progress</p>
                     </div>
 
-                    <div class="study__diary-record">
+                    <div class="study__diary-record" tabindex="0" role="article" area-label="Запись в дневнике от 15.02.25">
                         <p class="study__diary-data">15.02.25</p>
                         <p class="study__diary-task">Адаптивный дизайн</p>
                         <p class="study__diary-status">⏳in progress</p>
@@ -61,33 +71,33 @@
             <section class="cources">
                 <div class="cources__title-container">
                     <img class="cources__title-icon" src="../images/icons/bow.png">
-                    <p class="cources__title">Мои курсы</p>
+                    <p class="cources__title" tabindex="0" role="heading">Мои курсы</p>
                     <img class="cources__title-icon" src="../images/icons/bow.png">
                 </div>
 
                 <div class="cources__container">
-                    <div class="cources__bar">
-                        <p class="cources__name">HTML/CSS</p>
+                    <div class="cources__bar" tabindex="0" role="progressbar">
+                        <p class="cources__name" tabindex="0">HTML/CSS</p>
                         <div class="cources__progress">
                             <div class="cources__progress-bar" style="width: 75%;"></div>
                         </div>
-                        <p class="cources__percent">75%</p>
+                        <p class="cources__percent"  tabindex="0" aria-label="Прогресс освоения курса 75%">75%</p>
                     </div>
 
-                    <div class="cources__bar">
-                        <p class="cources__name">JavaScript</p>
+                    <div class="cources__bar" tabindex="0" role="progressbar">
+                        <p class="cources__name" tabindex="0">JavaScript</p>
                         <div class="cources__progress">
                             <div class="cources__progress-bar" style="width: 55%;"></div>
                         </div>
-                        <p class="cources__percent">55%</p>
+                        <p class="cources__percent"  tabindex="0" aria-label="Прогресс освоения курса 55%">55%</p>
                     </div>
 
-                    <div class="cources__bar">
-                        <p class="cources__name">React</p>
+                    <div class="cources__bar" tabindex="0" role="progressbar">
+                        <p class="cources__name" tabindex="0">React</p>
                         <div class="cources__progress">
                             <div class="cources__progress-bar" style="width: 60%;"></div>
                         </div>
-                        <p class="cources__percent">60%</p>
+                        <p class="cources__percent"  tabindex="0" aria-label="Прогресс освоения курса 60%">60%</p>
                     </div>
                 </div>
             </section>
@@ -98,7 +108,7 @@
 
             <address class="footer__contacts">
                 <img src="../images/icons/phone.png" alt="Иконка контактов" class="footer__contacts-icon">
-                <span class="footer__contacts-text">Контакты</span>
+                <a class="footer__contacts-text" href="pages/contacts.html" tabindex="0" role="link">Контакты</a>
             </address>
         </footer>
 
@@ -116,8 +126,8 @@
 
                         <div class="modal__form-group">
                             <label for="recordTask" class="modal__label">Задача:</label>
-                            <input type="text" id="recordTask" name="recordTask" class="modal__input" 
-                                   placeholder="Введите описание задачи" required>
+                            <input type="text" id="recordTask" name="recordTask" class="modal__input"
+                                placeholder="Введите описание задачи" required>
                         </div>
 
                         <div class="modal__form-group">
@@ -133,10 +143,8 @@
 
                         <div class="modal__form-group">
                             <label for="recordDescription" class="modal__label">Описание (необязательно):</label>
-                            <textarea id="recordDescription" name="recordDescription" 
-                                     class="modal__textarea" 
-                                     placeholder="Дополнительные детали или комментарии..."
-                                     rows="4"></textarea>
+                            <textarea id="recordDescription" name="recordDescription" class="modal__textarea"
+                                placeholder="Дополнительные детали или комментарии..." rows="4"></textarea>
                         </div>
 
                         <div class="modal__form-actions">
@@ -166,6 +174,8 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
         }
 
         .modal__content {
@@ -184,6 +194,7 @@
                 opacity: 0;
                 transform: translateY(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -315,8 +326,8 @@
 
         .study__button:hover {
             background: var(--color-accent);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 179, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 179, 255, 0.3);
         }
 
         /* Адаптивность */
@@ -325,15 +336,15 @@
                 margin: 10% auto;
                 width: 95%;
             }
-            
+
             .modal__body {
                 padding: 30px 25px;
             }
-            
+
             .modal__form-actions {
                 flex-direction: column;
             }
-            
+
             .modal__button {
                 width: 100%;
             }
@@ -343,7 +354,7 @@
             .modal__content {
                 margin: 2% auto;
             }
-            
+
             .modal__body {
                 padding: 25px 20px;
             }
@@ -351,37 +362,81 @@
     </style>
 
     <script>
-        function openModal() {
-            document.getElementById('addRecordModal').style.display = 'block';
-        }
+    let focusTrapHandler = null;
 
-        function closeModal() {
-            document.getElementById('addRecordModal').style.display = 'none';
-        }
+    function openModal() {
+        const modal = document.getElementById('addRecordModal');
+        modal.style.display = 'flex';
+        
+        setTimeout(() => {
+            document.getElementById('recordDate').focus();
+        }, 100);
+        
+        trapFocus(modal);
+    }
 
-        // Закрытие модального окна при клике вне его
-        window.onclick = function(event) {
-            const modal = document.getElementById('addRecordModal');
-            if (event.target === modal) {
-                closeModal();
+    function closeModal() {
+        const modal = document.getElementById('addRecordModal');
+        modal.style.display = 'none';
+        
+        document.querySelector('.study__button').focus();
+        
+        if (focusTrapHandler) {
+            modal.removeEventListener('keydown', focusTrapHandler);
+            focusTrapHandler = null;
+        }
+    }
+
+    function trapFocus(modal) {
+        const focusableElements = modal.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        
+        if (focusableElements.length === 0) return;
+        
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        focusTrapHandler = function(e) {
+            if (e.key !== 'Tab') return;
+            
+            if (e.shiftKey) {
+                if (document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+            } else {
+                if (document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
             }
-        }
+        };
+        
+        modal.addEventListener('keydown', focusTrapHandler);
+    }
 
-        // Закрытие по ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Обработка отправки формы (для демонстрации)
-        document.querySelector('.modal__form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Запись успешно добавлена! (Это демонстрация, данные не сохраняются)');
+    window.onclick = function (event) {
+        const modal = document.getElementById('addRecordModal');
+        if (event.target === modal) {
             closeModal();
-            this.reset();
-        });
-    </script>
+        }
+    }
 
-    </body>
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    document.querySelector('.modal__form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Запись успешно добавлена! (Это демонстрация, данные не сохраняются)');
+        closeModal();
+        this.reset();
+    });
+</script>
+
+</body>
+
 </html>

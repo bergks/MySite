@@ -2,15 +2,24 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Контакты</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
     <div class="page-container">
         <header class="header">
             <h1 class="header__title">BERGKS</h1>
+
+            <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+            </button>
+
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
@@ -21,11 +30,11 @@
             </nav>
         </header>
 
-        <main class="content">
+        <main class="content" id="main">
             <section class="contacts">
                 <div class="contacts__title-container">
                     <img class="contacts__title-icon" src="../images/icons/bow.png">
-                    <p class="contacts__title">Свяжитесь со мной</p>
+                    <p class="contacts__title" tabindex="0" role="heading">Свяжитесь со мной</p>
                     <img class="contacts__title-icon" src="../images/icons/bow.png">
                 </div>
 
@@ -56,30 +65,30 @@
 
                     <div class="contacts__info-section">
                         <div class="contacts__info">
-                            <p class="contacts__info-title">Контакты:</p>
+                            <p class="contacts__info-title" tabindex="0" role="heading">Контакты:</p>
                             
-                            <div class="contacts__info-item">
+                            <div class="contacts__info-item" tabindex="0" role="group" aria-label="Email: berg.ks@yandex.ru">
                                 <div class="contacts__info-content">
                                     <span class="contacts__info-label">Email:</span>
                                     <span class="contacts__info-value">berg.ks@yandex.ru</span>
                                 </div>
                             </div>
 
-                            <div class="contacts__info-item">
+                            <div class="contacts__info-item" tabindex="0" role="group" aria-label="Githab: bergks">
                                 <div class="contacts__info-content">
                                     <span class="contacts__info-label">GitHub:</span>
                                     <span class="contacts__info-value">bregks</span>
                                 </div>
                             </div>
 
-                            <div class="contacts__info-item">
+                            <div class="contacts__info-item" tabindex="0" role="group" area-label="Адрес: Москва, Россия">
                                 <div class="contacts__info-content">
                                     <span class="contacts__info-label">Адрес:</span>
                                     <span class="contacts__info-value">Москва, Россия</span>
                                 </div>
                             </div>
 
-                            <div class="contacts__info-item">
+                            <div class="contacts__info-item" tabindex="0" role="group" aria-label="Телефон: +7 (123) 456-78-90">
                                 <div class="contacts__info-content">
                                     <span class="contacts__info-label">Телефон:</span>
                                     <span class="contacts__info-value">+7 (123) 456-78-90</span>
@@ -95,7 +104,7 @@
             <p class="footer__text">&copy; 2025</p>
             <address class="footer__contacts">
                 <img src="../images/icons/phone.png" alt="Иконка контактов" class="footer__contacts-icon">
-                <span class="footer__contacts-text">Контакты</span>
+                <a class="footer__contacts-text" href="pages/contacts.html" tabindex="0" role="link">Контакты</a>
             </address>
         </footer>
     </div>
