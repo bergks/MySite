@@ -1,10 +1,10 @@
 :root {
     --color-main: #347CA2;
-    --color-accent: #48a1f9;
+    --color-accent: #3445a2;
     --color-text: rgba(35, 34, 33, 0.863);
     --color-text-light: #FAFDFF;
     --color-border: rgba(219, 248, 252, 0.623);
-    --color-background: #eff8fe;
+    --color-background: #F6FBFE;
     --color-focus: #a069ff;
 
     --radius: 20px;
