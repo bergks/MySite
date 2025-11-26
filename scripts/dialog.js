@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showError(errorElement, message) {
         errorElement.textContent = message;
+        input.setAttribute('aria-invalid', 'true');
         errorElement.classList.add('show');
     }
 
@@ -71,9 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const messageElement = document.createElement('div');
         messageElement.className = `contacts__message contacts__message--${type}`;
         messageElement.textContent = message;
+        messageElement.setAttribute('role', 'status');
+        messageElement.setAttribute('aria-live', 'polite');
         messageElement.classList.add('show');
         
         contactForm.appendChild(messageElement);
+
+        messageElement.setAttribute('tabindex', '0');
+
 
 
         setTimeout(() => {

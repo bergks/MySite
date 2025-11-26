@@ -36,6 +36,9 @@
     font-display: swap;
 }
 
+h2{
+    font-weight: normal;
+}
 
 .skip-link {
     position: absolute;
@@ -680,11 +683,16 @@ body {
     box-shadow: 0 8px 20px rgba(0, 179, 255, 0.3);
 }
 
+.projects-full__picture{
+    text-align: center;
+}
+
 .projects-full__card-img {
     width: auto;
     padding: 20px;
     height: 200px;
     margin: auto;
+    text-align: center;
     object-fit: cover;
     border-radius: var(--radius);
     background: var(--color-border);
