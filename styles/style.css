@@ -683,19 +683,24 @@ body {
     box-shadow: 0 8px 20px rgba(0, 179, 255, 0.3);
 }
 
-.projects-full__picture{
+.projects-full__picture {
     text-align: center;
+    width: 100%;
+    min-height: 200px;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .projects-full__card-img {
     width: auto;
-    padding: 20px;
-    height: 200px;
-    margin: auto;
-    text-align: center;
-    object-fit: cover;
-    border-radius: var(--radius);
-    background: var(--color-border);
+    height: auto;
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain; 
 }
 
 .projects-full__card-content {
